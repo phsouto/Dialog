@@ -39,6 +39,8 @@ public:
     void centralizedFrameOnX(int largura, int altura);
     void centralizedFrameOnY(int largura, int altura, int color);
     void centralizedFrameOnY(int largura, int altura);
+    void centralizedFrameOnXY(int largura, int altura, int color);
+    void centralizedFrameOnXY(int largura, int altura);
 
 private:
     int FrameColor, TextColor, BgColor;

@@ -12,17 +12,15 @@ classDialog::classDialog() { // Construtor usado para testes
     TextColor = YELLOW;
     BgColor = GREEN;
 
-    frame(10, 10);
+    frame(20, 10);
     getch();
     clrscr();
-    centralizedFrameOnY(10, 10, DefaultColor);
+    centralizedFrameOnXY(20, 10, DefaultColor);
 
-    //    frame(29, 9, 50, 15, FrameColor);
-    //    gotoxy(31, 12);
-    //    textcolor(TextColor);
-    //    textbackground(BgColor);
-    //    string bt = "[  OK  ]";
-    //    centralizeStringOnXY(bt);
+    textcolor(TextColor);
+    textbackground(BgColor);
+    string bt = "[  OK  ]";
+    centralizeStringOnXY(bt);
     getch();
     normvideo();
     clrscr();
@@ -105,4 +103,15 @@ void classDialog::centralizedFrameOnY(int largura, int altura) {
     centralizedFrameOnY(largura, altura, DefaultColor);
 }
 
-void
+void classDialog::centralizedFrameOnXY(int largura, int altura, int color) {
+    int a = 80 / 2 - largura / 2;
+    int b = 25 / 2 + 1 - altura / 2;
+    int c = 80 / 2 + largura / 2;
+    int d = 25 / 2 + altura / 2;
+
+    frame(a, b, c, d, color);
+}
+
+void classDialog::centralizedFrameOnXY(int largura, int altura) {
+    centralizedFrameOnXY(largura, altura, DefaultColor);
+}
