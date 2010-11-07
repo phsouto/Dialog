@@ -12,12 +12,16 @@
 using namespace std;
 
 /*
- * Programa de teste para a classe Dialog e suas derivadas.
+ * Programa de teste para a classe Dialog e suas derivadas (se existirem).
  */
 
 int main(int argc, char** argv) {
-    system("title Dialog Class Test");
     classDialog Dialog;
+    Dialog.setDefaultFrameColor(LIGHTGREEN);
+    Dialog.setDefaultTextColor(LIGHTBLUE);
+    Dialog.centralizedFrameOnXY(20,10);
+    Dialog.centralizeStringOnXY("LOL");
+    getch();
     return 0;
 }
 

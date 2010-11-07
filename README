@@ -1,6 +1,8 @@
-	Esta classe e semalhante ao "programa" dialog muito usado em shell script
+Esta classe e semalhante ao "programa" dialog muito usado em shell script
 para criar interfaces pseudo-graficas.
-	Existem bugs e gafes a serem corrigidos. Este e um trabalho de aprendizado
+Existem bugs e gafes a serem corrigidos. Este e um trabalho de aprendizado
 acima de tudo.
 
-	2:c)
+Ferramentas: Netbeans 6.9.1 + MinGW
+
+2:c)

@@ -7,23 +7,7 @@
 
 #include "classDialog.h"
 
-classDialog::classDialog() { // Construtor usado para testes
-    FrameColor = CYAN;
-    TextColor = YELLOW;
-    BgColor = GREEN;
-
-    frame(20, 10);
-    getch();
-    clrscr();
-    centralizedFrameOnXY(20, 10, DefaultColor);
-
-    textcolor(TextColor);
-    textbackground(BgColor);
-    string bt = "[  OK  ]";
-    centralizeStringOnXY(bt);
-    getch();
-    normvideo();
-    clrscr();
+classDialog::classDialog() {
 
 }
 
@@ -34,6 +18,10 @@ classDialog::~classDialog() {
 }
 
 // By my Own
+
+int classDialog::DefaultFrameColor = YELLOW;
+int classDialog::DefaultTextColor = WHITE;
+int classDialog::DefaultBgColor = BLACK;
 
 void classDialog::frame(int a, int b, int c, int d, int color) {
     int x;
@@ -65,21 +53,24 @@ void classDialog::frame(int largura, int altura, int color) {
 }
 
 void classDialog::frame(int largura, int altura) {
-    frame(largura, altura, DefaultColor);
+    frame(largura, altura, DefaultFrameColor);
 }
 
 void classDialog::centralizeStringOnX(string s) {
     gotoxy((40 - s.size() / 2), 3);
+    textcolor(DefaultTextColor);
     cout << s << endl;
 }
 
 void classDialog::centralizeStringOnY(string s) {
     gotoxy(1, 25 / 2);
+    textcolor(DefaultTextColor);
     cout << s << endl;
 }
 
 void classDialog::centralizeStringOnXY(string s) {
     gotoxy((40 - s.size() / 2), 25 / 2);
+    textcolor(DefaultTextColor);
     cout << s << endl;
 }
 
@@ -90,7 +81,7 @@ void classDialog::centralizedFrameOnX(int largura, int altura, int color) {
 }
 
 void classDialog::centralizedFrameOnX(int largura, int altura) {
-    centralizedFrameOnX(largura, altura, DefaultColor);
+    centralizedFrameOnX(largura, altura, DefaultFrameColor);
 }
 
 void classDialog::centralizedFrameOnY(int largura, int altura, int color) {
@@ -100,7 +91,7 @@ void classDialog::centralizedFrameOnY(int largura, int altura, int color) {
 }
 
 void classDialog::centralizedFrameOnY(int largura, int altura) {
-    centralizedFrameOnY(largura, altura, DefaultColor);
+    centralizedFrameOnY(largura, altura, DefaultFrameColor);
 }
 
 void classDialog::centralizedFrameOnXY(int largura, int altura, int color) {
@@ -113,5 +104,23 @@ void classDialog::centralizedFrameOnXY(int largura, int altura, int color) {
 }
 
 void classDialog::centralizedFrameOnXY(int largura, int altura) {
-    centralizedFrameOnXY(largura, altura, DefaultColor);
+    centralizedFrameOnXY(largura, altura, DefaultFrameColor);
+}
+
+void classDialog::setDefaultFrameColor(int color) {
+    DefaultFrameColor = color;
+}
+
+void classDialog::setDefaultTextColor(int color) {
+    DefaultTextColor = color;
+}
+
+void classDialog::setDefaultBgColor(int color) {
+    DefaultBgColor = color;
+}
+
+void classDialog::setDefaultColors(int fcolor, int tcolor, int bcolor) {
+    setDefaultFrameColor(fcolor);
+    setDefaultTextColor(tcolor);
+    setDefaultBgColor(bcolor);
 }

@@ -3,9 +3,7 @@
  * Author: Pedro
  *
  * Created on 5 de Novembro de 2010, 23:01
- */
-
-/*
+ *
  * Versao: 0.0001 alpha. :)
  *
  *  Esta classe e semalhante ao "programa" dialog muito usado em shell script
@@ -41,10 +39,14 @@ public:
     void centralizedFrameOnY(int largura, int altura);
     void centralizedFrameOnXY(int largura, int altura, int color);
     void centralizedFrameOnXY(int largura, int altura);
+    void setDefaultFrameColor(int color);
+    void setDefaultTextColor(int color);
+    void setDefaultBgColor(int color);
+    void setDefaultColors(int fcolor, int tcolor, int bcolor);
 
 private:
     int FrameColor, TextColor, BgColor;
-    static const int DefaultColor = YELLOW;
+    static int DefaultFrameColor, DefaultTextColor, DefaultBgColor;
 };
 
 #endif	/* CLASSDIALOG_H */
